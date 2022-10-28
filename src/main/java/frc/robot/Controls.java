@@ -209,7 +209,7 @@ public class Controls {
                     
                     // Shooter
                     boolean startedShootingProcess = false;
-                    boolean enableLED = true;
+                    boolean enableLED = false;
 
                     int currentDPAD = getGamepad1().getPOV(0);
                     if(currentDPAD != lastDPAD) {
@@ -280,8 +280,7 @@ public class Controls {
                         shooterIntakeLockout = true;
                //         intakeUp = false;
                         if(!robot.getVision().hasTarget()) {
-                            System.out.println("no target, assuming close shot");
-                            robot.getFlywheel().update(1300, 410);
+                            robot.getFlywheel().update(600, 450);
                         }
                         else robot.getFlywheel().updateDistance(robot.getVision().getDistance(), false, lowerRPM);
                     }
@@ -319,7 +318,7 @@ public class Controls {
                     longFired =  !longFired;
                 }
 
-                //Climber stufffffff
+                //Climber stuffff
 
                 if(getGamepad2().getStartButtonPressed()) climbingSequencerCount++;
 

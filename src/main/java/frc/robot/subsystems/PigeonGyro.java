@@ -4,12 +4,12 @@ import com.ctre.phoenix.sensors.PigeonIMU;
 
 public class PigeonGyro {
     
-    PigeonIMU gyro;
+    Pigeon2 gyro;
     double atLastReset = 0;
-    public PigeonGyro(PigeonIMU gyro) {
+    public PigeonGyro(Pigeon2 gyro) {
         this.gyro = gyro;
         
-        atLastReset = gyro.getFusedHeading();
+        atLastReset = gyro.getYaw;
     }
 
     public double getCurrentHeading() {
@@ -19,6 +19,7 @@ public class PigeonGyro {
     public void resetHeading() {
         System.out.println("resetting");
         atLastReset = gyro.getFusedHeading();
+        //testing
     }
 
 
